@@ -1,11 +1,12 @@
 //
+//  Dragula.swift
+//  Dragula
+//
 //  Created by Mustafa Yusuf on 05/06/25.
 //
 
 import SwiftUI
 import UIKit
-
-
 
 /// A protocol for individual drag-and-droppable items.
 /// Conforming types can provide an `NSItemProvider` for drag interaction.
