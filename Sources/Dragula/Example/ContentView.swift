@@ -180,6 +180,8 @@ extension ContentView {
     }
 }
 
+#if DEBUG
 #Preview {
     ContentView()
 }
+#endif
