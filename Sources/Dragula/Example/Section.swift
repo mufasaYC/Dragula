@@ -2,8 +2,7 @@
 //  Section.swift
 //  Dragula
 //
-//  Created by Eugene Kovs on 04.07.2025.
-//  https://github.com/kovs705
+//  Refactored by Eugene Kovs on 04.07.2025.
 //  Contributed to Dragula
 //
 
