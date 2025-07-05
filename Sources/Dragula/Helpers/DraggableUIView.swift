@@ -3,6 +3,8 @@
 //  Dragula
 //
 //  Created by Eugene Kovs on 04.07.2025.
+//  https://github.com/kovs705
+//  Contributed to Dragula
 //
 
 #if canImport(UIKit)

@@ -9,20 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    struct Section: DragulaSection {
-        
-        struct Item: DragulaItem {
-            let id: UUID = .init()
-            let title: String
-            let color: Color
-            var isDraggable: Bool = true
-        }
-        
-        let id: UUID = .init()
-        let title: String
-        var items: [Item] = []
-    }
-    
     @State private var sections: [Section] = [
         Section(
             title: "Procrastination Tasks",
