@@ -32,9 +32,9 @@ import UniformTypeIdentifiers
 /// }
 /// ```
 public struct DragulaSectionedView<Header: View,
-                                         Card: View,
-                                         DropView: View,
-                                         Section: DragulaSection>: View {
+                                   Card: View,
+                                   DropView: View,
+                                   Section: DragulaSection>: View {
     
     @Binding private var sections: [Section]
     @Binding private var items: [Section.Item]
@@ -86,9 +86,9 @@ public struct DragulaSectionedView<Header: View,
     
     public var body: some View {
         ForEach(sections) { section in
-            #if os(watchOS)
+#if os(watchOS)
             header(section)
-            #else
+#else
             header(section)
                 .onDrop(
                     of: supportedUTTypes,
@@ -99,12 +99,12 @@ public struct DragulaSectionedView<Header: View,
                         draggedItems: $draggedItems
                     )
                 )
-            #endif
+#endif
             
             ForEach(section.items) { item in
-                #if os(watchOS)
+#if os(watchOS)
                 card(item)
-                #else
+#else
                 card(item)
                     .hidden(item.isDraggable)
                     .overlay {
@@ -133,7 +133,7 @@ public struct DragulaSectionedView<Header: View,
                             draggedItems: $draggedItems
                         )
                     )
-                #endif
+#endif
             }
         }
     }

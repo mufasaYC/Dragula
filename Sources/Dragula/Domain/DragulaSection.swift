@@ -1,8 +1,9 @@
 //
-//  representing.swift
+//  DragulaSection.swift
 //  Dragula
 //
-//  Created by Eugene Kovs on 04.07.2025.
+//  Created by Mustafa Yusuf on 05/06/25.
+//  Refactored by Eugene Kovs on 04.07.2025.
 //
 
 import Foundation

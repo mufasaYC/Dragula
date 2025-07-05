@@ -3,7 +3,6 @@
 //  Dragula
 //
 //  Refactored by Eugene Kovs on 04.07.2025.
-//  Contributed to Dragula
 //
 
 #if !os(watchOS) && canImport(UIKit)

@@ -4,7 +4,6 @@
 //
 //  Created by Mustafa Yusuf
 //  Refactored by Eugene Kovs on 04.07.2025.
-//  Contributed to Dragula
 //
 
 import SwiftUI
@@ -58,9 +57,9 @@ public struct DragulaView<Card: View, DropView: View, Item: DragulaItem>: View {
     
     public var body: some View {
         ForEach(items) { item in
-            #if os(watchOS)
+#if os(watchOS)
             card(item)
-            #else
+#else
             card(item)
                 .hidden(item.isDraggable)
                 .overlay {
@@ -88,7 +87,7 @@ public struct DragulaView<Card: View, DropView: View, Item: DragulaItem>: View {
                         draggedItems: $draggedItems
                     )
                 )
-                #endif
+#endif
         }
     }
 }
