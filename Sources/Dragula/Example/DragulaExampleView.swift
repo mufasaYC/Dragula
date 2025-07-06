@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DragulaExampleView.swift
 //  Dragula
 //
 //  Created by Mustafa Yusuf on 06/06/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DragulaExampleView: View {
     
     @State private var sections: [Section] = MockSectionData.sections
     
@@ -104,6 +104,6 @@ struct ContentView: View {
 
 #if DEBUG
 #Preview {
-    ContentView()
+    DragulaExampleView()
 }
 #endif
