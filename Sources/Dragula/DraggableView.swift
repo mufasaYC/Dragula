@@ -176,8 +176,15 @@ extension DraggableView {
                 self?.previewView.alpha = .zero
                 self?.dropIndicatorView.alpha = 1
             }
-            animator.addCompletion { [weak self] test in
-                self?.previewView.isHidden = true
+            animator.addCompletion { [weak self] position in
+                // Fix for disappearing views when drag session ends without movement:
+                // When animation completes at .start position, it indicates the drag was
+                // cancelled/interrupted without movement, which bypasses normal delegate
+                // methods that would restore the view. Schedule a restoration check.
+                if position != .start { return }
+                DispatchQueue.main.async { [weak self] in
+                    self?.checkAndRestoreAfterFailedDrag()
+                }
             }
         }
         
@@ -237,6 +244,18 @@ extension DraggableView {
             sessionIsRestrictedToDraggingApplication session: any UIDragSession
         ) -> Bool {
             true
+        }
+                
+        // MARK: - Failed Drag Recovery
+        
+        /// Restores view visibility if it was left hidden after a failed drag session.
+        /// This handles cases where drag sessions end without movement and bypass
+        /// normal delegate restoration methods.
+        private func checkAndRestoreAfterFailedDrag() {
+            if !previewView.isHidden { return }
+            previewView.isHidden = false
+            previewView.alpha = 1.0
+            dropIndicatorView.alpha = 0.0
         }
     }
 }
